@@ -17,15 +17,17 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-iris = pd.read_csv('https://raw.github.com/NessaRNG/DataMining/gh-pages/TugasPendat/Iris.csv')
-iris.head()
+dataset_url = "https://raw.github.com/NessaRNG/DataMining/gh-pages/TugasPendat/Iris.csv"
+iris = pd.read_csv(dataset_url)
+iris
 ------------------
 
 [0;31m[0m
 [0;31mHTTPError[0mTraceback (most recent call last)
-[0;32m<ipython-input-2-070b3253f89f>[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0miris[0m [0;34m=[0m [0mpd[0m[0;34m.[0m[0mread_csv[0m[0;34m([0m[0;34m'https://raw.github.com/NessaRNG/DataMining/gh-pages/TugasPendat/Iris.csv'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      2[0m [0miris[0m[0;34m.[0m[0mhead[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m<ipython-input-3-8ddc8cceecfc>[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0mdataset_url[0m [0;34m=[0m [0;34m"https://raw.github.com/NessaRNG/DataMining/gh-pages/TugasPendat/Iris.csv"[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0miris[0m [0;34m=[0m [0mpd[0m[0;34m.[0m[0mread_csv[0m[0;34m([0m[0mdataset_url[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      3[0m [0miris[0m[0;34m[0m[0;34m[0m[0m
 
 [0;32m/usr/local/lib/python3.7/dist-packages/pandas/util/_decorators.py[0m in [0;36mwrapper[0;34m(*args, **kwargs)[0m
 [1;32m    309[0m                     [0mstacklevel[0m[0;34m=[0m[0mstacklevel[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
