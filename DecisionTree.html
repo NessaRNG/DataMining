@@ -157,7 +157,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Tugas1.html">Dissimilarity Binary Symetric (Tugas 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tugas1.html">Tugas 1 : Dissimilarity Binary Symetric</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Tugas2.html">Tugas 2 : Menghitung Jarak</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UTS_Pendat.html">UTS Pendat</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Tugas 3 : Decision Tree pada Data Iris</a></li>
@@ -408,7 +408,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-957e3222-082c-4776-b5ed-367a7f73a899">
+  <div id="df-77202dfd-e486-4b0e-ba26-332607cad884">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -540,7 +540,7 @@ document.write(`
 </table>
 <p>150 rows × 6 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-957e3222-082c-4776-b5ed-367a7f73a899')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-77202dfd-e486-4b0e-ba26-332607cad884')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -591,12 +591,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-957e3222-082c-4776-b5ed-367a7f73a899 button.colab-df-convert');
+          document.querySelector('#df-77202dfd-e486-4b0e-ba26-332607cad884 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-957e3222-082c-4776-b5ed-367a7f73a899');
+          const element = document.querySelector('#df-77202dfd-e486-4b0e-ba26-332607cad884');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -702,39 +702,8 @@ memory usage: 7.2+ KB
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">df_copy</span><span class="p">[[</span><span class="s1">&#39;sepal_length&#39;</span><span class="p">,</span> <span class="s1">&#39;sepal_width&#39;</span><span class="p">,</span> <span class="s1">&#39;petal_length&#39;</span><span class="p">,</span> <span class="s1">&#39;petal_width&#39;</span><span class="p">]]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">df_copy</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">KeyError</span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-7-da965be4fcfb&gt;</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">X</span> <span class="o">=</span> <span class="n">df_copy</span><span class="p">[[</span><span class="s1">&#39;sepal_length&#39;</span><span class="p">,</span> <span class="s1">&#39;sepal_width&#39;</span><span class="p">,</span> <span class="s1">&#39;petal_length&#39;</span><span class="p">,</span> <span class="s1">&#39;petal_width&#39;</span><span class="p">]]</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">y</span> <span class="o">=</span> <span class="n">df_copy</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">]</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/core/frame.py</span> in <span class="ni">__getitem__</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3811</span>             <span class="k">if</span> <span class="n">is_iterator</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">3812</span>                 <span class="n">key</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">3813</span>             <span class="n">indexer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">_get_indexer_strict</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s2">&quot;columns&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">3814</span> 
-<span class="g g-Whitespace">   </span><span class="mi">3815</span>         <span class="c1"># take() does not accept boolean indexers</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/core/indexes/base.py</span> in <span class="ni">_get_indexer_strict</span><span class="nt">(self, key, axis_name)</span>
-<span class="g g-Whitespace">   </span><span class="mi">6068</span>             <span class="n">keyarr</span><span class="p">,</span> <span class="n">indexer</span><span class="p">,</span> <span class="n">new_indexer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reindex_non_unique</span><span class="p">(</span><span class="n">keyarr</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">6069</span> 
-<span class="ne">-&gt; </span><span class="mi">6070</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_raise_if_missing</span><span class="p">(</span><span class="n">keyarr</span><span class="p">,</span> <span class="n">indexer</span><span class="p">,</span> <span class="n">axis_name</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">6071</span> 
-<span class="g g-Whitespace">   </span><span class="mi">6072</span>         <span class="n">keyarr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">indexer</span><span class="p">)</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/core/indexes/base.py</span> in <span class="ni">_raise_if_missing</span><span class="nt">(self, key, indexer, axis_name)</span>
-<span class="g g-Whitespace">   </span><span class="mi">6128</span>                 <span class="k">if</span> <span class="n">use_interval_msg</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">6129</span>                     <span class="n">key</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">6130</span>                 <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;None of [</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">] are in the [</span><span class="si">{</span><span class="n">axis_name</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">6131</span> 
-<span class="g g-Whitespace">   </span><span class="mi">6132</span>             <span class="n">not_found</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ensure_index</span><span class="p">(</span><span class="n">key</span><span class="p">)[</span><span class="n">missing_mask</span><span class="o">.</span><span class="n">nonzero</span><span class="p">()[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
-
-<span class="ne">KeyError</span>: &quot;None of [Index([&#39;sepal_length&#39;, &#39;sepal_width&#39;, &#39;petal_length&#39;, &#39;petal_width&#39;], dtype=&#39;object&#39;)] are in the [columns]&quot;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">df_copy</span><span class="p">[[</span><span class="s1">&#39;SepalLengthCm&#39;</span><span class="p">,</span> <span class="s1">&#39;SepalWidthCm&#39;</span><span class="p">,</span> <span class="s1">&#39;PetalLengthCm&#39;</span><span class="p">,</span> <span class="s1">&#39;PetalWidthCm&#39;</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df_copy</span><span class="p">[</span><span class="s1">&#39;Species&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -811,7 +780,7 @@ memory usage: 7.2+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f1a5d9ff47f79d33ef8035a9dddb5a3f54b07e4ac5b4184d7197292fffdc5051.svg" src="_images/f1a5d9ff47f79d33ef8035a9dddb5a3f54b07e4ac5b4184d7197292fffdc5051.svg" /></div>
+<img alt="_images/417a1742547efcd9e739b6939491fb887f65871dc914dd9b6443e3a300dc0532.svg" src="_images/417a1742547efcd9e739b6939491fb887f65871dc914dd9b6443e3a300dc0532.svg" /></div>
 </div>
 <ol class="arabic simple" start="12">
 <li><p>Menghitung akurasi Decision Tree</p></li>
