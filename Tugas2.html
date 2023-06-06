@@ -377,14 +377,14 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="kn">import</span> <span class="n">pairwise_distances</span>
-<span class="n">job_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/Rifqi-05/pendata/main/Job_Placement_Data.csv&#39;</span><span class="p">)</span>
+<span class="n">job_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/NessaRNG/DataMining/main/TugasPendat/Test.csv&#39;</span><span class="p">)</span>
 <span class="n">job_data</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-6f23e416-ff2c-4075-b76d-9a2461841594">
+  <div id="df-ec42712f-518c-4ecd-9379-e6f15aa34f77">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -404,101 +404,83 @@ document.write(`
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>gender</th>
-      <th>ssc_percentage</th>
-      <th>ssc_board</th>
-      <th>hsc_percentage</th>
-      <th>hsc_board</th>
-      <th>hsc_subject</th>
-      <th>degree_percentage</th>
-      <th>undergrad_degree</th>
-      <th>work_experience</th>
-      <th>emp_test_percentage</th>
-      <th>specialisation</th>
-      <th>mba_percent</th>
-      <th>status</th>
+      <th>ID</th>
+      <th>Gender</th>
+      <th>Ever_Married</th>
+      <th>Age</th>
+      <th>Graduated</th>
+      <th>Profession</th>
+      <th>Work_Experience</th>
+      <th>Spending_Score</th>
+      <th>Family_Size</th>
+      <th>Var_1</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>M</td>
-      <td>67.00</td>
-      <td>Others</td>
-      <td>91.00</td>
-      <td>Others</td>
-      <td>Commerce</td>
-      <td>58.00</td>
-      <td>Sci&amp;Tech</td>
-      <td>No</td>
-      <td>55.0</td>
-      <td>Mkt&amp;HR</td>
-      <td>58.80</td>
-      <td>Placed</td>
+      <td>458989</td>
+      <td>Female</td>
+      <td>Yes</td>
+      <td>36</td>
+      <td>Yes</td>
+      <td>Engineer</td>
+      <td>0.0</td>
+      <td>Low</td>
+      <td>1.0</td>
+      <td>Cat_6</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>M</td>
-      <td>79.33</td>
-      <td>Central</td>
-      <td>78.33</td>
-      <td>Others</td>
-      <td>Science</td>
-      <td>77.48</td>
-      <td>Sci&amp;Tech</td>
+      <td>458994</td>
+      <td>Male</td>
       <td>Yes</td>
-      <td>86.5</td>
-      <td>Mkt&amp;Fin</td>
-      <td>66.28</td>
-      <td>Placed</td>
+      <td>37</td>
+      <td>Yes</td>
+      <td>Healthcare</td>
+      <td>8.0</td>
+      <td>Average</td>
+      <td>4.0</td>
+      <td>Cat_6</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>M</td>
-      <td>65.00</td>
-      <td>Central</td>
-      <td>68.00</td>
-      <td>Central</td>
-      <td>Arts</td>
-      <td>64.00</td>
-      <td>Comm&amp;Mgmt</td>
+      <td>458996</td>
+      <td>Female</td>
+      <td>Yes</td>
+      <td>69</td>
       <td>No</td>
-      <td>75.0</td>
-      <td>Mkt&amp;Fin</td>
-      <td>57.80</td>
-      <td>Placed</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>Low</td>
+      <td>1.0</td>
+      <td>Cat_6</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>M</td>
-      <td>56.00</td>
-      <td>Central</td>
-      <td>52.00</td>
-      <td>Central</td>
-      <td>Science</td>
-      <td>52.00</td>
-      <td>Sci&amp;Tech</td>
+      <td>459000</td>
+      <td>Male</td>
+      <td>Yes</td>
+      <td>59</td>
       <td>No</td>
-      <td>66.0</td>
-      <td>Mkt&amp;HR</td>
-      <td>59.43</td>
-      <td>Not Placed</td>
+      <td>Executive</td>
+      <td>11.0</td>
+      <td>High</td>
+      <td>2.0</td>
+      <td>Cat_6</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>M</td>
-      <td>85.80</td>
-      <td>Central</td>
-      <td>73.60</td>
-      <td>Central</td>
-      <td>Commerce</td>
-      <td>73.30</td>
-      <td>Comm&amp;Mgmt</td>
+      <td>459001</td>
+      <td>Female</td>
       <td>No</td>
-      <td>96.8</td>
-      <td>Mkt&amp;Fin</td>
-      <td>55.50</td>
-      <td>Placed</td>
+      <td>19</td>
+      <td>No</td>
+      <td>Marketing</td>
+      <td>NaN</td>
+      <td>Low</td>
+      <td>4.0</td>
+      <td>Cat_6</td>
     </tr>
     <tr>
       <th>...</th>
@@ -512,95 +494,77 @@ document.write(`
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
-      <th>210</th>
-      <td>M</td>
-      <td>80.60</td>
-      <td>Others</td>
-      <td>82.00</td>
-      <td>Others</td>
-      <td>Commerce</td>
-      <td>77.60</td>
-      <td>Comm&amp;Mgmt</td>
+      <th>2622</th>
+      <td>467954</td>
+      <td>Male</td>
       <td>No</td>
-      <td>91.0</td>
-      <td>Mkt&amp;Fin</td>
-      <td>74.49</td>
-      <td>Placed</td>
-    </tr>
-    <tr>
-      <th>211</th>
-      <td>M</td>
-      <td>58.00</td>
-      <td>Others</td>
-      <td>60.00</td>
-      <td>Others</td>
-      <td>Science</td>
-      <td>72.00</td>
-      <td>Sci&amp;Tech</td>
+      <td>29</td>
       <td>No</td>
-      <td>74.0</td>
-      <td>Mkt&amp;Fin</td>
-      <td>53.62</td>
-      <td>Placed</td>
+      <td>Healthcare</td>
+      <td>9.0</td>
+      <td>Low</td>
+      <td>4.0</td>
+      <td>Cat_6</td>
     </tr>
     <tr>
-      <th>212</th>
-      <td>M</td>
-      <td>67.00</td>
-      <td>Others</td>
-      <td>67.00</td>
-      <td>Others</td>
-      <td>Commerce</td>
-      <td>73.00</td>
-      <td>Comm&amp;Mgmt</td>
+      <th>2623</th>
+      <td>467958</td>
+      <td>Female</td>
+      <td>No</td>
+      <td>35</td>
       <td>Yes</td>
-      <td>59.0</td>
-      <td>Mkt&amp;Fin</td>
-      <td>69.72</td>
-      <td>Placed</td>
+      <td>Doctor</td>
+      <td>1.0</td>
+      <td>Low</td>
+      <td>1.0</td>
+      <td>Cat_6</td>
     </tr>
     <tr>
-      <th>213</th>
-      <td>F</td>
-      <td>74.00</td>
-      <td>Others</td>
-      <td>66.00</td>
-      <td>Others</td>
-      <td>Commerce</td>
-      <td>58.00</td>
-      <td>Comm&amp;Mgmt</td>
+      <th>2624</th>
+      <td>467960</td>
+      <td>Female</td>
       <td>No</td>
-      <td>70.0</td>
-      <td>Mkt&amp;HR</td>
-      <td>60.23</td>
-      <td>Placed</td>
+      <td>53</td>
+      <td>Yes</td>
+      <td>Entertainment</td>
+      <td>NaN</td>
+      <td>Low</td>
+      <td>2.0</td>
+      <td>Cat_6</td>
     </tr>
     <tr>
-      <th>214</th>
-      <td>M</td>
-      <td>62.00</td>
-      <td>Central</td>
-      <td>58.00</td>
-      <td>Others</td>
-      <td>Science</td>
-      <td>53.00</td>
-      <td>Comm&amp;Mgmt</td>
+      <th>2625</th>
+      <td>467961</td>
+      <td>Male</td>
+      <td>Yes</td>
+      <td>47</td>
+      <td>Yes</td>
+      <td>Executive</td>
+      <td>1.0</td>
+      <td>High</td>
+      <td>5.0</td>
+      <td>Cat_4</td>
+    </tr>
+    <tr>
+      <th>2626</th>
+      <td>467968</td>
+      <td>Female</td>
       <td>No</td>
-      <td>89.0</td>
-      <td>Mkt&amp;HR</td>
-      <td>60.22</td>
-      <td>Not Placed</td>
+      <td>43</td>
+      <td>Yes</td>
+      <td>Healthcare</td>
+      <td>9.0</td>
+      <td>Low</td>
+      <td>3.0</td>
+      <td>Cat_7</td>
     </tr>
   </tbody>
 </table>
-<p>215 rows × 13 columns</p>
+<p>2627 rows × 10 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-6f23e416-ff2c-4075-b76d-9a2461841594')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-ec42712f-518c-4ecd-9379-e6f15aa34f77')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -651,12 +615,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-6f23e416-ff2c-4075-b76d-9a2461841594 button.colab-df-convert');
+          document.querySelector('#df-ec42712f-518c-4ecd-9379-e6f15aa34f77 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-6f23e416-ff2c-4075-b76d-9a2461841594');
+          const element = document.querySelector('#df-ec42712f-518c-4ecd-9379-e6f15aa34f77');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -685,10 +649,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;gender&#39;, &#39;ssc_percentage&#39;, &#39;ssc_board&#39;, &#39;hsc_percentage&#39;, &#39;hsc_board&#39;,
-       &#39;hsc_subject&#39;, &#39;degree_percentage&#39;, &#39;undergrad_degree&#39;,
-       &#39;work_experience&#39;, &#39;emp_test_percentage&#39;, &#39;specialisation&#39;,
-       &#39;mba_percent&#39;, &#39;status&#39;],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;ID&#39;, &#39;Gender&#39;, &#39;Ever_Married&#39;, &#39;Age&#39;, &#39;Graduated&#39;, &#39;Profession&#39;,
+       &#39;Work_Experience&#39;, &#39;Spending_Score&#39;, &#39;Family_Size&#39;, &#39;Var_1&#39;],
       dtype=&#39;object&#39;)
 </pre></div>
 </div>
@@ -696,13 +658,13 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job_data</span><span class="p">[[</span><span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="s1">&#39;status&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job_data</span><span class="p">[[</span><span class="s1">&#39;Gender&#39;</span><span class="p">,</span> <span class="s1">&#39;Ever_Married&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-11b00d90-5d07-4555-8bc7-e38d84dc3073">
+  <div id="df-4fd1286a-72f3-4a99-85d4-4e913fcc5b21">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -722,65 +684,65 @@ document.write(`
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>gender</th>
-      <th>status</th>
+      <th>Gender</th>
+      <th>Ever_Married</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>M</td>
-      <td>Placed</td>
+      <td>Female</td>
+      <td>Yes</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>M</td>
-      <td>Placed</td>
+      <td>Male</td>
+      <td>Yes</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>M</td>
-      <td>Placed</td>
+      <td>Female</td>
+      <td>Yes</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>M</td>
-      <td>Not Placed</td>
+      <td>Male</td>
+      <td>Yes</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>M</td>
-      <td>Placed</td>
+      <td>Female</td>
+      <td>No</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>M</td>
-      <td>Not Placed</td>
+      <td>Male</td>
+      <td>Yes</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>F</td>
-      <td>Not Placed</td>
+      <td>Male</td>
+      <td>Yes</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>M</td>
-      <td>Placed</td>
+      <td>Female</td>
+      <td>Yes</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>M</td>
-      <td>Placed</td>
+      <td>Male</td>
+      <td>Yes</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>M</td>
-      <td>Not Placed</td>
+      <td>Male</td>
+      <td>No</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-11b00d90-5d07-4555-8bc7-e38d84dc3073')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-4fd1286a-72f3-4a99-85d4-4e913fcc5b21')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -831,12 +793,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-11b00d90-5d07-4555-8bc7-e38d84dc3073 button.colab-df-convert');
+          document.querySelector('#df-4fd1286a-72f3-4a99-85d4-4e913fcc5b21 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-11b00d90-5d07-4555-8bc7-e38d84dc3073');
+          const element = document.querySelector('#df-4fd1286a-72f3-4a99-85d4-4e913fcc5b21');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -860,15 +822,15 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gender code</span>
-<span class="n">gender_female</span> <span class="o">=</span> <span class="s2">&quot;F&quot;</span>
-<span class="n">gender_male</span> <span class="o">=</span> <span class="s2">&quot;M&quot;</span>
+<span class="n">Gender_female</span> <span class="o">=</span> <span class="s2">&quot;F&quot;</span>
+<span class="n">Gender_male</span> <span class="o">=</span> <span class="s2">&quot;M&quot;</span>
 
 <span class="c1"># binary value</span>
 <span class="n">value_one</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">value_zero</span> <span class="o">=</span> <span class="mi">0</span>
 
-<span class="k">def</span> <span class="nf">change_gender_to_binary</span><span class="p">(</span><span class="n">gender</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">value_one</span> <span class="k">if</span> <span class="n">gender</span> <span class="o">==</span> <span class="n">gender_male</span> <span class="k">else</span> <span class="n">value_zero</span>
+<span class="k">def</span> <span class="nf">change_Gender_to_binary</span><span class="p">(</span><span class="n">Gender</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">value_one</span> <span class="k">if</span> <span class="n">Gender</span> <span class="o">==</span> <span class="n">Gender_male</span> <span class="k">else</span> <span class="n">value_zero</span>
 </pre></div>
 </div>
 </div>
@@ -876,8 +838,8 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># lunch code</span>
-<span class="n">status_placed</span> <span class="o">=</span> <span class="s2">&quot;Placed&quot;</span>
-<span class="n">status_not_placed</span> <span class="o">=</span> <span class="s2">&quot;Not placed&quot;</span>
+<span class="n">status_placed</span> <span class="o">=</span> <span class="s2">&quot;Yes&quot;</span>
+<span class="n">status_not_placed</span> <span class="o">=</span> <span class="s2">&quot;No&quot;</span>
 
 <span class="c1"># binary value</span>
 <span class="n">value_one</span> <span class="o">=</span> <span class="mi">1</span>
@@ -892,17 +854,17 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Update all values</span>
-<span class="n">job_data</span><span class="p">[</span><span class="s2">&quot;gender&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">job_data</span><span class="p">[</span><span class="s2">&quot;gender&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">change_gender_to_binary</span><span class="p">)</span>
-<span class="n">job_data</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">job_data</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">change_status_to_binary</span><span class="p">)</span>
+<span class="n">job_data</span><span class="p">[</span><span class="s2">&quot;Gender&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">job_data</span><span class="p">[</span><span class="s2">&quot;Gender&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">change_Gender_to_binary</span><span class="p">)</span>
+<span class="n">job_data</span><span class="p">[</span><span class="s2">&quot;Ever_Married&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">job_data</span><span class="p">[</span><span class="s2">&quot;Ever_Married&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">change_status_to_binary</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">NameError</span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-7-0d541edfae82&gt;</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
+<span class="nn">&lt;ipython-input-7-2de5d66a2af7&gt;</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Update all values</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">job_data</span><span class="p">[</span><span class="s2">&quot;gender&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">job_data</span><span class="p">[</span><span class="s2">&quot;gender&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">change_gender_to_binary</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">job_data</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">job_data</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">change_status_to_binary</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">job_data</span><span class="p">[</span><span class="s2">&quot;Gender&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">job_data</span><span class="p">[</span><span class="s2">&quot;Gender&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">change_Gender_to_binary</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">job_data</span><span class="p">[</span><span class="s2">&quot;Ever_Married&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">job_data</span><span class="p">[</span><span class="s2">&quot;Ever_Married&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">change_status_to_binary</span><span class="p">)</span>
 
 <span class="ne">NameError</span>: name &#39;change_status_to_binary&#39; is not defined
 </pre></div>
@@ -911,13 +873,13 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job_data</span><span class="p">[[</span><span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="s1">&#39;status&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job_data</span><span class="p">[[</span><span class="s1">&#39;Gender&#39;</span><span class="p">,</span> <span class="s1">&#39;Ever_Married&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-c4983317-0dbc-4963-a010-a1ef443abf7c">
+  <div id="df-da995f59-65d3-4191-84bd-6c0e89877915">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -937,65 +899,65 @@ document.write(`
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>gender</th>
-      <th>status</th>
+      <th>Gender</th>
+      <th>Ever_Married</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
-      <td>Placed</td>
+      <td>0</td>
+      <td>Yes</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>1</td>
-      <td>Placed</td>
+      <td>0</td>
+      <td>Yes</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>1</td>
-      <td>Placed</td>
+      <td>0</td>
+      <td>Yes</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>1</td>
-      <td>Not Placed</td>
+      <td>0</td>
+      <td>Yes</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>1</td>
-      <td>Placed</td>
+      <td>0</td>
+      <td>No</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>1</td>
-      <td>Not Placed</td>
+      <td>0</td>
+      <td>Yes</td>
     </tr>
     <tr>
       <th>6</th>
       <td>0</td>
-      <td>Not Placed</td>
+      <td>Yes</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>1</td>
-      <td>Placed</td>
+      <td>0</td>
+      <td>Yes</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>1</td>
-      <td>Placed</td>
+      <td>0</td>
+      <td>Yes</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>1</td>
-      <td>Not Placed</td>
+      <td>0</td>
+      <td>No</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-c4983317-0dbc-4963-a010-a1ef443abf7c')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-da995f59-65d3-4191-84bd-6c0e89877915')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -1046,12 +1008,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-c4983317-0dbc-4963-a010-a1ef443abf7c button.colab-df-convert');
+          document.querySelector('#df-da995f59-65d3-4191-84bd-6c0e89877915 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-c4983317-0dbc-4963-a010-a1ef443abf7c');
+          const element = document.querySelector('#df-da995f59-65d3-4191-84bd-6c0e89877915');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1109,13 +1071,13 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dissimilarity_dataset</span><span class="p">(</span><span class="n">job_data</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;gender&quot;</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dissimilarity_dataset</span><span class="p">(</span><span class="n">job_data</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Gender&quot;</span><span class="p">,</span> <span class="s2">&quot;Ever_Married&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-a39868ce-d94f-49ac-b948-beff62d4d3d8">
+  <div id="df-88042368-ee5a-4039-9051-24ecc7fdb066">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1141,19 +1103,19 @@ document.write(`
   </thead>
   <tbody>
     <tr>
-      <th>gender</th>
-      <td>1</td>
-      <td>1</td>
+      <th>Gender</th>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>status</th>
-      <td>Placed</td>
-      <td>Placed</td>
+      <th>Ever_Married</th>
+      <td>Yes</td>
+      <td>Yes</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-a39868ce-d94f-49ac-b948-beff62d4d3d8')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-88042368-ee5a-4039-9051-24ecc7fdb066')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -1204,12 +1166,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-a39868ce-d94f-49ac-b948-beff62d4d3d8 button.colab-df-convert');
+          document.querySelector('#df-88042368-ee5a-4039-9051-24ecc7fdb066 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-a39868ce-d94f-49ac-b948-beff62d4d3d8');
+          const element = document.querySelector('#df-88042368-ee5a-4039-9051-24ecc7fdb066');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1232,13 +1194,13 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;gender&quot;</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Gender&quot;</span><span class="p">,</span> <span class="s2">&quot;Ever_Married&quot;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-9f7eafb0-910d-466c-90f7-252c5acf510f">
+  <div id="df-b8e68328-4986-41a7-8605-ff446e20ec98">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1258,40 +1220,40 @@ document.write(`
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>gender</th>
-      <th>status</th>
+      <th>Gender</th>
+      <th>Ever_Married</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
-      <td>Placed</td>
+      <td>0</td>
+      <td>Yes</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>1</td>
-      <td>Placed</td>
+      <td>0</td>
+      <td>Yes</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>1</td>
-      <td>Placed</td>
+      <td>0</td>
+      <td>Yes</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>1</td>
-      <td>Not Placed</td>
+      <td>0</td>
+      <td>Yes</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>1</td>
-      <td>Placed</td>
+      <td>0</td>
+      <td>No</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-9f7eafb0-910d-466c-90f7-252c5acf510f')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-b8e68328-4986-41a7-8605-ff446e20ec98')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -1342,12 +1304,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-9f7eafb0-910d-466c-90f7-252c5acf510f button.colab-df-convert');
+          document.querySelector('#df-b8e68328-4986-41a7-8605-ff446e20ec98 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-9f7eafb0-910d-466c-90f7-252c5acf510f');
+          const element = document.querySelector('#df-b8e68328-4986-41a7-8605-ff446e20ec98');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1397,7 +1359,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dimensi (1,2)</span>
-<span class="n">dimensi_1_2</span> <span class="o">=</span> <span class="n">dissimilarity_dataset</span><span class="p">(</span><span class="n">job_data</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;gender&quot;</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">])</span>
+<span class="n">dimensi_1_2</span> <span class="o">=</span> <span class="n">dissimilarity_dataset</span><span class="p">(</span><span class="n">job_data</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Gender&quot;</span><span class="p">,</span> <span class="s2">&quot;Ever_Married&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1412,7 +1374,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dimensi (1,3)</span>
-<span class="n">dimensi_1_3</span> <span class="o">=</span> <span class="n">dissimilarity_dataset</span><span class="p">(</span><span class="n">job_data</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;gender&quot;</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">])</span>
+<span class="n">dimensi_1_3</span> <span class="o">=</span> <span class="n">dissimilarity_dataset</span><span class="p">(</span><span class="n">job_data</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Gender&quot;</span><span class="p">,</span> <span class="s2">&quot;Ever_Married&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1427,7 +1389,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dimensi (1,4)</span>
-<span class="n">dimensi_1_4</span> <span class="o">=</span> <span class="n">dissimilarity_dataset</span><span class="p">(</span><span class="n">job_data</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;gender&quot;</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">])</span>
+<span class="n">dimensi_1_4</span> <span class="o">=</span> <span class="n">dissimilarity_dataset</span><span class="p">(</span><span class="n">job_data</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Gender&quot;</span><span class="p">,</span> <span class="s2">&quot;Ever_Married&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1467,11 +1429,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1481,22 +1438,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># d1 dan d4</span>
 
 <span class="n">dimensi_1_4</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
 </pre></div>
 </div>
 </div>
