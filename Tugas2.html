@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dissimilarity Binary Symetric (Tugas 1) &#8212; My sample book</title>
+    <title>Tugas 2 : Menghitung Jarak &#8212; My sample book</title>
   
   
   
@@ -60,11 +60,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Tugas1';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Tugas2';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tugas 2 : Menghitung Jarak" href="Tugas2.html" />
-    <link rel="prev" title="Content with notebooks" href="notebooks.html" />
+    <link rel="next" title="UTS Pendat" href="UTS_Pendat.html" />
+    <link rel="prev" title="Dissimilarity Binary Symetric (Tugas 1)" href="Tugas1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -157,8 +157,8 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Dissimilarity Binary Symetric (Tugas 1)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Tugas2.html">Tugas 2 : Menghitung Jarak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tugas1.html">Dissimilarity Binary Symetric (Tugas 1)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tugas 2 : Menghitung Jarak</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UTS_Pendat.html">UTS Pendat</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DecisionTree.html">Decision Tree pada Data Iris</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Tugas4.html">Tugas 4 : Multilayer Perceptron (MLP)</a></li>
@@ -234,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FTugas1.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FTugas2.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/Tugas1.ipynb" target="_blank"
+      <li><a href="_sources/Tugas2.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -344,7 +344,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Dissimilarity Binary Symetric (Tugas 1)</h1>
+    <h1>Tugas 2 : Menghitung Jarak</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -358,20 +358,33 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="dissimilarity-binary-symetric-tugas-1">
-<h1>Dissimilarity Binary Symetric (Tugas 1)<a class="headerlink" href="#dissimilarity-binary-symetric-tugas-1" title="Permalink to this heading">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="tugas-2-menghitung-jarak">
+<h1>Tugas 2 : Menghitung Jarak<a class="headerlink" href="#tugas-2-menghitung-jarak" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import library</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sb</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">math</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">CustSeg</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/NessaRNG/DataMining/main/TugasPendat/Test.csv&#39;</span><span class="p">)</span>
-<span class="n">CustSeg</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="kn">import</span> <span class="n">pairwise_distances</span>
+<span class="n">job_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/Rifqi-05/pendata/main/Job_Placement_Data.csv&#39;</span><span class="p">)</span>
+<span class="n">job_data</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-c7eaa14a-b30e-48c4-b1df-dab313cbed4b">
+  <div id="df-6f23e416-ff2c-4075-b76d-9a2461841594">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -391,83 +404,101 @@ document.write(`
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>ID</th>
-      <th>Gender</th>
-      <th>Ever_Married</th>
-      <th>Age</th>
-      <th>Graduated</th>
-      <th>Profession</th>
-      <th>Work_Experience</th>
-      <th>Spending_Score</th>
-      <th>Family_Size</th>
-      <th>Var_1</th>
+      <th>gender</th>
+      <th>ssc_percentage</th>
+      <th>ssc_board</th>
+      <th>hsc_percentage</th>
+      <th>hsc_board</th>
+      <th>hsc_subject</th>
+      <th>degree_percentage</th>
+      <th>undergrad_degree</th>
+      <th>work_experience</th>
+      <th>emp_test_percentage</th>
+      <th>specialisation</th>
+      <th>mba_percent</th>
+      <th>status</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>458989</td>
-      <td>Female</td>
-      <td>Yes</td>
-      <td>36</td>
-      <td>Yes</td>
-      <td>Engineer</td>
-      <td>0.0</td>
-      <td>Low</td>
-      <td>1.0</td>
-      <td>Cat_6</td>
+      <td>M</td>
+      <td>67.00</td>
+      <td>Others</td>
+      <td>91.00</td>
+      <td>Others</td>
+      <td>Commerce</td>
+      <td>58.00</td>
+      <td>Sci&amp;Tech</td>
+      <td>No</td>
+      <td>55.0</td>
+      <td>Mkt&amp;HR</td>
+      <td>58.80</td>
+      <td>Placed</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>458994</td>
-      <td>Male</td>
+      <td>M</td>
+      <td>79.33</td>
+      <td>Central</td>
+      <td>78.33</td>
+      <td>Others</td>
+      <td>Science</td>
+      <td>77.48</td>
+      <td>Sci&amp;Tech</td>
       <td>Yes</td>
-      <td>37</td>
-      <td>Yes</td>
-      <td>Healthcare</td>
-      <td>8.0</td>
-      <td>Average</td>
-      <td>4.0</td>
-      <td>Cat_6</td>
+      <td>86.5</td>
+      <td>Mkt&amp;Fin</td>
+      <td>66.28</td>
+      <td>Placed</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>458996</td>
-      <td>Female</td>
-      <td>Yes</td>
-      <td>69</td>
+      <td>M</td>
+      <td>65.00</td>
+      <td>Central</td>
+      <td>68.00</td>
+      <td>Central</td>
+      <td>Arts</td>
+      <td>64.00</td>
+      <td>Comm&amp;Mgmt</td>
       <td>No</td>
-      <td>NaN</td>
-      <td>0.0</td>
-      <td>Low</td>
-      <td>1.0</td>
-      <td>Cat_6</td>
+      <td>75.0</td>
+      <td>Mkt&amp;Fin</td>
+      <td>57.80</td>
+      <td>Placed</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>459000</td>
-      <td>Male</td>
-      <td>Yes</td>
-      <td>59</td>
+      <td>M</td>
+      <td>56.00</td>
+      <td>Central</td>
+      <td>52.00</td>
+      <td>Central</td>
+      <td>Science</td>
+      <td>52.00</td>
+      <td>Sci&amp;Tech</td>
       <td>No</td>
-      <td>Executive</td>
-      <td>11.0</td>
-      <td>High</td>
-      <td>2.0</td>
-      <td>Cat_6</td>
+      <td>66.0</td>
+      <td>Mkt&amp;HR</td>
+      <td>59.43</td>
+      <td>Not Placed</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>459001</td>
-      <td>Female</td>
+      <td>M</td>
+      <td>85.80</td>
+      <td>Central</td>
+      <td>73.60</td>
+      <td>Central</td>
+      <td>Commerce</td>
+      <td>73.30</td>
+      <td>Comm&amp;Mgmt</td>
       <td>No</td>
-      <td>19</td>
-      <td>No</td>
-      <td>Marketing</td>
-      <td>NaN</td>
-      <td>Low</td>
-      <td>4.0</td>
-      <td>Cat_6</td>
+      <td>96.8</td>
+      <td>Mkt&amp;Fin</td>
+      <td>55.50</td>
+      <td>Placed</td>
     </tr>
     <tr>
       <th>...</th>
@@ -481,77 +512,95 @@ document.write(`
       <td>...</td>
       <td>...</td>
       <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
-      <th>2622</th>
-      <td>467954</td>
-      <td>Male</td>
+      <th>210</th>
+      <td>M</td>
+      <td>80.60</td>
+      <td>Others</td>
+      <td>82.00</td>
+      <td>Others</td>
+      <td>Commerce</td>
+      <td>77.60</td>
+      <td>Comm&amp;Mgmt</td>
       <td>No</td>
-      <td>29</td>
-      <td>No</td>
-      <td>Healthcare</td>
-      <td>9.0</td>
-      <td>Low</td>
-      <td>4.0</td>
-      <td>Cat_6</td>
+      <td>91.0</td>
+      <td>Mkt&amp;Fin</td>
+      <td>74.49</td>
+      <td>Placed</td>
     </tr>
     <tr>
-      <th>2623</th>
-      <td>467958</td>
-      <td>Female</td>
+      <th>211</th>
+      <td>M</td>
+      <td>58.00</td>
+      <td>Others</td>
+      <td>60.00</td>
+      <td>Others</td>
+      <td>Science</td>
+      <td>72.00</td>
+      <td>Sci&amp;Tech</td>
       <td>No</td>
-      <td>35</td>
-      <td>Yes</td>
-      <td>Doctor</td>
-      <td>1.0</td>
-      <td>Low</td>
-      <td>1.0</td>
-      <td>Cat_6</td>
+      <td>74.0</td>
+      <td>Mkt&amp;Fin</td>
+      <td>53.62</td>
+      <td>Placed</td>
     </tr>
     <tr>
-      <th>2624</th>
-      <td>467960</td>
-      <td>Female</td>
-      <td>No</td>
-      <td>53</td>
+      <th>212</th>
+      <td>M</td>
+      <td>67.00</td>
+      <td>Others</td>
+      <td>67.00</td>
+      <td>Others</td>
+      <td>Commerce</td>
+      <td>73.00</td>
+      <td>Comm&amp;Mgmt</td>
       <td>Yes</td>
-      <td>Entertainment</td>
-      <td>NaN</td>
-      <td>Low</td>
-      <td>2.0</td>
-      <td>Cat_6</td>
+      <td>59.0</td>
+      <td>Mkt&amp;Fin</td>
+      <td>69.72</td>
+      <td>Placed</td>
     </tr>
     <tr>
-      <th>2625</th>
-      <td>467961</td>
-      <td>Male</td>
-      <td>Yes</td>
-      <td>47</td>
-      <td>Yes</td>
-      <td>Executive</td>
-      <td>1.0</td>
-      <td>High</td>
-      <td>5.0</td>
-      <td>Cat_4</td>
+      <th>213</th>
+      <td>F</td>
+      <td>74.00</td>
+      <td>Others</td>
+      <td>66.00</td>
+      <td>Others</td>
+      <td>Commerce</td>
+      <td>58.00</td>
+      <td>Comm&amp;Mgmt</td>
+      <td>No</td>
+      <td>70.0</td>
+      <td>Mkt&amp;HR</td>
+      <td>60.23</td>
+      <td>Placed</td>
     </tr>
     <tr>
-      <th>2626</th>
-      <td>467968</td>
-      <td>Female</td>
+      <th>214</th>
+      <td>M</td>
+      <td>62.00</td>
+      <td>Central</td>
+      <td>58.00</td>
+      <td>Others</td>
+      <td>Science</td>
+      <td>53.00</td>
+      <td>Comm&amp;Mgmt</td>
       <td>No</td>
-      <td>43</td>
-      <td>Yes</td>
-      <td>Healthcare</td>
-      <td>9.0</td>
-      <td>Low</td>
-      <td>3.0</td>
-      <td>Cat_7</td>
+      <td>89.0</td>
+      <td>Mkt&amp;HR</td>
+      <td>60.22</td>
+      <td>Not Placed</td>
     </tr>
   </tbody>
 </table>
-<p>2627 rows × 10 columns</p>
+<p>215 rows × 13 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-c7eaa14a-b30e-48c4-b1df-dab313cbed4b')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-6f23e416-ff2c-4075-b76d-9a2461841594')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -602,12 +651,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-c7eaa14a-b30e-48c4-b1df-dab313cbed4b button.colab-df-convert');
+          document.querySelector('#df-6f23e416-ff2c-4075-b76d-9a2461841594 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-c7eaa14a-b30e-48c4-b1df-dab313cbed4b');
+          const element = document.querySelector('#df-6f23e416-ff2c-4075-b76d-9a2461841594');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -631,28 +680,29 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show all columns from dataframe</span>
-<span class="n">CustSeg</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">job_data</span><span class="o">.</span><span class="n">columns</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;ID&#39;, &#39;Gender&#39;, &#39;Ever_Married&#39;, &#39;Age&#39;, &#39;Graduated&#39;, &#39;Profession&#39;,
-       &#39;Work_Experience&#39;, &#39;Spending_Score&#39;, &#39;Family_Size&#39;, &#39;Var_1&#39;],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;gender&#39;, &#39;ssc_percentage&#39;, &#39;ssc_board&#39;, &#39;hsc_percentage&#39;, &#39;hsc_board&#39;,
+       &#39;hsc_subject&#39;, &#39;degree_percentage&#39;, &#39;undergrad_degree&#39;,
+       &#39;work_experience&#39;, &#39;emp_test_percentage&#39;, &#39;specialisation&#39;,
+       &#39;mba_percent&#39;, &#39;status&#39;],
       dtype=&#39;object&#39;)
 </pre></div>
 </div>
 </div>
 </div>
-<p>#Seleksi Fitur</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CustSeg</span><span class="p">[[</span><span class="s1">&#39;Gender&#39;</span><span class="p">,</span> <span class="s1">&#39;Graduated&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job_data</span><span class="p">[[</span><span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="s1">&#39;status&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-f4116bbe-e7d8-43ef-9f97-878679f6e4b3">
+  <div id="df-11b00d90-5d07-4555-8bc7-e38d84dc3073">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -672,40 +722,65 @@ document.write(`
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Gender</th>
-      <th>Graduated</th>
+      <th>gender</th>
+      <th>status</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>Female</td>
-      <td>Yes</td>
+      <td>M</td>
+      <td>Placed</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Male</td>
-      <td>Yes</td>
+      <td>M</td>
+      <td>Placed</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>Female</td>
-      <td>No</td>
+      <td>M</td>
+      <td>Placed</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>Male</td>
-      <td>No</td>
+      <td>M</td>
+      <td>Not Placed</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>Female</td>
-      <td>No</td>
+      <td>M</td>
+      <td>Placed</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>M</td>
+      <td>Not Placed</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>F</td>
+      <td>Not Placed</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>M</td>
+      <td>Placed</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>M</td>
+      <td>Placed</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>M</td>
+      <td>Not Placed</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-f4116bbe-e7d8-43ef-9f97-878679f6e4b3')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-11b00d90-5d07-4555-8bc7-e38d84dc3073')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -756,12 +831,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-f4116bbe-e7d8-43ef-9f97-878679f6e4b3 button.colab-df-convert');
+          document.querySelector('#df-11b00d90-5d07-4555-8bc7-e38d84dc3073 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-f4116bbe-e7d8-43ef-9f97-878679f6e4b3');
+          const element = document.querySelector('#df-11b00d90-5d07-4555-8bc7-e38d84dc3073');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -782,14 +857,11 @@ document.write(`
   </div>
   </div></div>
 </div>
-<p>Change Values to 1/0 Take all values of ‘gender’</p>
-<p>If values is Female change to 1</p>
-<p>If values is Male to 0</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gender code</span>
-<span class="n">gender_female</span> <span class="o">=</span> <span class="s2">&quot;female&quot;</span>
-<span class="n">gender_male</span> <span class="o">=</span> <span class="s2">&quot;male&quot;</span>
+<span class="n">gender_female</span> <span class="o">=</span> <span class="s2">&quot;F&quot;</span>
+<span class="n">gender_male</span> <span class="o">=</span> <span class="s2">&quot;M&quot;</span>
 
 <span class="c1"># binary value</span>
 <span class="n">value_one</span> <span class="o">=</span> <span class="mi">1</span>
@@ -801,21 +873,18 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Change Values to 1/0 Take all values of ‘Graduated’</p>
-<p>If values is Paid change to 1</p>
-<p>If values is free to 0</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># lunch code</span>
-<span class="n">ever_graduated</span> <span class="o">=</span> <span class="s2">&quot;yes&quot;</span>
-<span class="n">never_graduated</span> <span class="o">=</span> <span class="s2">&quot;no&quot;</span>
+<span class="n">status_placed</span> <span class="o">=</span> <span class="s2">&quot;Placed&quot;</span>
+<span class="n">status_not_placed</span> <span class="o">=</span> <span class="s2">&quot;Not placed&quot;</span>
 
 <span class="c1"># binary value</span>
 <span class="n">value_one</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">value_zero</span> <span class="o">=</span> <span class="mi">0</span>
 
-<span class="k">def</span> <span class="nf">change_graduation_to_binary</span><span class="p">(</span><span class="n">grad</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">value_one</span> <span class="k">if</span> <span class="n">grad</span> <span class="o">==</span> <span class="n">never_graduated</span> <span class="k">else</span> <span class="n">value_zero</span>
+<span class="k">def</span> <span class="nf">change_lunch_to_binary</span><span class="p">(</span><span class="n">status</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">value_one</span> <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="n">status_not_placed</span> <span class="k">else</span> <span class="n">value_zero</span>
 </pre></div>
 </div>
 </div>
@@ -823,21 +892,32 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Update all values</span>
-<span class="n">CustSeg</span><span class="p">[</span><span class="s2">&quot;Gender&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">CustSeg</span><span class="p">[</span><span class="s2">&quot;Gender&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">change_gender_to_binary</span><span class="p">)</span>
-<span class="n">CustSeg</span><span class="p">[</span><span class="s2">&quot;Graduated&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">CustSeg</span><span class="p">[</span><span class="s2">&quot;Graduated&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">change_graduation_to_binary</span><span class="p">)</span>
+<span class="n">job_data</span><span class="p">[</span><span class="s2">&quot;gender&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">job_data</span><span class="p">[</span><span class="s2">&quot;gender&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">change_gender_to_binary</span><span class="p">)</span>
+<span class="n">job_data</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">job_data</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">change_status_to_binary</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">NameError</span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-7-0d541edfae82&gt;</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Update all values</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">job_data</span><span class="p">[</span><span class="s2">&quot;gender&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">job_data</span><span class="p">[</span><span class="s2">&quot;gender&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">change_gender_to_binary</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">job_data</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">job_data</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">change_status_to_binary</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;change_status_to_binary&#39; is not defined
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CustSeg</span><span class="p">[[</span><span class="s1">&#39;Gender&#39;</span><span class="p">,</span> <span class="s1">&#39;Graduated&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job_data</span><span class="p">[[</span><span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="s1">&#39;status&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-dfce6af7-b0f4-4ff3-a59d-cbb61c0f65a6">
+  <div id="df-c4983317-0dbc-4963-a010-a1ef443abf7c">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -857,40 +937,65 @@ document.write(`
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Gender</th>
-      <th>Graduated</th>
+      <th>gender</th>
+      <th>status</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>0</td>
-      <td>0</td>
+      <td>1</td>
+      <td>Placed</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0</td>
-      <td>0</td>
+      <td>1</td>
+      <td>Placed</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0</td>
-      <td>0</td>
+      <td>1</td>
+      <td>Placed</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0</td>
-      <td>0</td>
+      <td>1</td>
+      <td>Not Placed</td>
     </tr>
     <tr>
       <th>4</th>
+      <td>1</td>
+      <td>Placed</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1</td>
+      <td>Not Placed</td>
+    </tr>
+    <tr>
+      <th>6</th>
       <td>0</td>
-      <td>0</td>
+      <td>Not Placed</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1</td>
+      <td>Placed</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1</td>
+      <td>Placed</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1</td>
+      <td>Not Placed</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-dfce6af7-b0f4-4ff3-a59d-cbb61c0f65a6')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-c4983317-0dbc-4963-a010-a1ef443abf7c')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -941,12 +1046,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-dfce6af7-b0f4-4ff3-a59d-cbb61c0f65a6 button.colab-df-convert');
+          document.querySelector('#df-c4983317-0dbc-4963-a010-a1ef443abf7c button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-dfce6af7-b0f4-4ff3-a59d-cbb61c0f65a6');
+          const element = document.querySelector('#df-c4983317-0dbc-4963-a010-a1ef443abf7c');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -985,17 +1090,17 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_series</span><span class="p">(</span><span class="n">CustSeg</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">series</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">CustSeg</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">idx</span><span class="p">),</span> <span class="n">series</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_series</span><span class="p">(</span><span class="n">job_data</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">series</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">job_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">idx</span><span class="p">),</span> <span class="n">series</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dissimilarity_dataset</span><span class="p">(</span><span class="n">CustSeg</span><span class="p">,</span> <span class="n">series_index</span> <span class="o">=</span> <span class="p">[],</span> <span class="n">series</span> <span class="o">=</span> <span class="p">[]):</span>
-    <span class="n">first_series</span> <span class="o">=</span> <span class="n">get_series</span><span class="p">(</span><span class="n">CustSeg</span><span class="p">,</span> <span class="n">series_index</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">series</span><span class="p">)</span>
-    <span class="n">second_series</span> <span class="o">=</span> <span class="n">get_series</span><span class="p">(</span><span class="n">CustSeg</span><span class="p">,</span> <span class="n">series_index</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">series</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dissimilarity_dataset</span><span class="p">(</span><span class="n">job_data</span><span class="p">,</span> <span class="n">series_index</span> <span class="o">=</span> <span class="p">[],</span> <span class="n">series</span> <span class="o">=</span> <span class="p">[]):</span>
+    <span class="n">first_series</span> <span class="o">=</span> <span class="n">get_series</span><span class="p">(</span><span class="n">job_data</span><span class="p">,</span> <span class="n">series_index</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">series</span><span class="p">)</span>
+    <span class="n">second_series</span> <span class="o">=</span> <span class="n">get_series</span><span class="p">(</span><span class="n">job_data</span><span class="p">,</span> <span class="n">series_index</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">series</span><span class="p">)</span>
     <span class="n">dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">first_series</span><span class="p">,</span><span class="n">second_series</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">dataset</span><span class="o">.</span><span class="n">T</span>
 </pre></div>
@@ -1004,13 +1109,13 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dissimilarity_dataset</span><span class="p">(</span><span class="n">CustSeg</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Gender&quot;</span><span class="p">,</span> <span class="s2">&quot;Graduated&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dissimilarity_dataset</span><span class="p">(</span><span class="n">job_data</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;gender&quot;</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-84a8d512-9089-4850-8ce7-c2aa4a70baec">
+  <div id="df-a39868ce-d94f-49ac-b948-beff62d4d3d8">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1036,19 +1141,19 @@ document.write(`
   </thead>
   <tbody>
     <tr>
-      <th>Gender</th>
-      <td>0</td>
-      <td>0</td>
+      <th>gender</th>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
-      <th>Graduated</th>
-      <td>0</td>
-      <td>0</td>
+      <th>status</th>
+      <td>Placed</td>
+      <td>Placed</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-84a8d512-9089-4850-8ce7-c2aa4a70baec')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-a39868ce-d94f-49ac-b948-beff62d4d3d8')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -1099,12 +1204,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-84a8d512-9089-4850-8ce7-c2aa4a70baec button.colab-df-convert');
+          document.querySelector('#df-a39868ce-d94f-49ac-b948-beff62d4d3d8 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-84a8d512-9089-4850-8ce7-c2aa4a70baec');
+          const element = document.querySelector('#df-a39868ce-d94f-49ac-b948-beff62d4d3d8');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1127,13 +1232,13 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CustSeg</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Gender&quot;</span><span class="p">,</span> <span class="s2">&quot;Graduated&quot;</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;gender&quot;</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-385f233e-280d-4551-a047-cb22d141c2d5">
+  <div id="df-9f7eafb0-910d-466c-90f7-252c5acf510f">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1153,40 +1258,40 @@ document.write(`
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Gender</th>
-      <th>Graduated</th>
+      <th>gender</th>
+      <th>status</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>0</td>
-      <td>0</td>
+      <td>1</td>
+      <td>Placed</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0</td>
-      <td>0</td>
+      <td>1</td>
+      <td>Placed</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0</td>
-      <td>0</td>
+      <td>1</td>
+      <td>Placed</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0</td>
-      <td>0</td>
+      <td>1</td>
+      <td>Not Placed</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0</td>
-      <td>0</td>
+      <td>1</td>
+      <td>Placed</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-385f233e-280d-4551-a047-cb22d141c2d5')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-9f7eafb0-910d-466c-90f7-252c5acf510f')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -1237,12 +1342,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-385f233e-280d-4551-a047-cb22d141c2d5 button.colab-df-convert');
+          document.querySelector('#df-9f7eafb0-910d-466c-90f7-252c5acf510f button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-385f233e-280d-4551-a047-cb22d141c2d5');
+          const element = document.querySelector('#df-9f7eafb0-910d-466c-90f7-252c5acf510f');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1265,15 +1370,15 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_probality_value</span><span class="p">(</span><span class="n">CustSeg</span><span class="p">,</span> <span class="n">start_index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">last_index</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_probality_value</span><span class="p">(</span><span class="n">job_data</span><span class="p">,</span> <span class="n">start_index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">last_index</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
 
     <span class="n">PROBALITY_VALUE</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;q&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
 
-    <span class="n">column_range</span> <span class="o">=</span> <span class="n">CustSeg</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">column_range</span> <span class="o">=</span> <span class="n">job_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 
     <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">column_range</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">PROBALITY_TABLE_VALUE</span><span class="p">:</span>
-            <span class="n">item</span> <span class="o">=</span> <span class="nb">list</span><span class="p">((</span><span class="nb">tuple</span><span class="p">(</span><span class="n">CustSeg</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">start_index</span><span class="p">):(</span><span class="n">last_index</span><span class="p">),</span> <span class="n">CustSeg</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">column</span><span class="p">]])</span> <span class="o">==</span> <span class="n">PROBALITY_TABLE_VALUE</span><span class="p">[</span><span class="n">value</span><span class="p">],</span> <span class="n">value</span><span class="p">))</span>
+            <span class="n">item</span> <span class="o">=</span> <span class="nb">list</span><span class="p">((</span><span class="nb">tuple</span><span class="p">(</span><span class="n">job_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">start_index</span><span class="p">):(</span><span class="n">last_index</span><span class="p">),</span> <span class="n">job_data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">column</span><span class="p">]])</span> <span class="o">==</span> <span class="n">PROBALITY_TABLE_VALUE</span><span class="p">[</span><span class="n">value</span><span class="p">],</span> <span class="n">value</span><span class="p">))</span>
             <span class="k">if</span> <span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;q&quot;</span><span class="p">:</span>
                     <span class="n">PROBALITY_VALUE</span><span class="p">[</span><span class="s2">&quot;q&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
@@ -1292,7 +1397,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dimensi (1,2)</span>
-<span class="n">dimensi_1_2</span> <span class="o">=</span> <span class="n">dissimilarity_dataset</span><span class="p">(</span><span class="n">CustSeg</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Gender&quot;</span><span class="p">,</span> <span class="s2">&quot;Graduated&quot;</span><span class="p">])</span>
+<span class="n">dimensi_1_2</span> <span class="o">=</span> <span class="n">dissimilarity_dataset</span><span class="p">(</span><span class="n">job_data</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;gender&quot;</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1307,7 +1412,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dimensi (1,3)</span>
-<span class="n">dimensi_1_3</span> <span class="o">=</span> <span class="n">dissimilarity_dataset</span><span class="p">(</span><span class="n">CustSeg</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Gender&quot;</span><span class="p">,</span> <span class="s2">&quot;Graduated&quot;</span><span class="p">])</span>
+<span class="n">dimensi_1_3</span> <span class="o">=</span> <span class="n">dissimilarity_dataset</span><span class="p">(</span><span class="n">job_data</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;gender&quot;</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1322,7 +1427,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dimensi (1,4)</span>
-<span class="n">dimensi_1_4</span> <span class="o">=</span> <span class="n">dissimilarity_dataset</span><span class="p">(</span><span class="n">CustSeg</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Gender&quot;</span><span class="p">,</span> <span class="s2">&quot;Graduated&quot;</span><span class="p">])</span>
+<span class="n">dimensi_1_4</span> <span class="o">=</span> <span class="n">dissimilarity_dataset</span><span class="p">(</span><span class="n">job_data</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;gender&quot;</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1334,8 +1439,8 @@ document.write(`
 </div>
 </div>
 </div>
-<p>#Dissimilarity Binary Symetric Value Formula</p>
-<p><img alt="image.png" src="data:image/png;base64,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" /></p>
+<p>Dissimilarity Binary Symetric Value Formula</p>
+<p><img alt="image.png" src="data:image/png;base64,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" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dissimilarity_binary_symetric_distance</span><span class="p">(</span><span class="n">probality_value</span><span class="p">):</span>
@@ -1430,20 +1535,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="notebooks.html"
+       href="Tugas1.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Content with notebooks</p>
+        <p class="prev-next-title">Dissimilarity Binary Symetric (Tugas 1)</p>
       </div>
     </a>
     <a class="right-next"
-       href="Tugas2.html"
+       href="UTS_Pendat.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tugas 2 : Menghitung Jarak</p>
+        <p class="prev-next-title">UTS Pendat</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
